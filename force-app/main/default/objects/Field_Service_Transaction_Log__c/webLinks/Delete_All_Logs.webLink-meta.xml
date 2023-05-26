@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delete_All_Logs</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Delete All Logs</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/flow/Field_Service_Transactions_Delete_All_Logs?retURL=%2Flightning%2Fo%2FField_Service_Transaction_Log__c%2Flist%3FfilterName%3DRecent%26overrideNavRules%3Dtrue</url>
+</WebLink>
