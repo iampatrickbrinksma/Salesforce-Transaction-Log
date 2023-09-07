@@ -21,6 +21,7 @@
     <types>
         <members>Field_Service_Transaction_Log__c</members>
         <members>Field_Service_Transaction_Field_Change__c</members>
+        <members>Field_Service_Transaction_Log_Settings__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -44,5 +45,5 @@
         <members>Field_Service_Transaction_Log_Permissions</members>
         <name>PermissionSet</name>
     </types>       
-    <version>57.0</version>
+    <version>58.0</version>
 </Package>
