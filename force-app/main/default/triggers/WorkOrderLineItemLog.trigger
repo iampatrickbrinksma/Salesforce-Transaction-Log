@@ -1,3 +1,3 @@
 trigger WorkOrderLineItemLog on WorkOrderLineItem  (before insert, before update, before delete, after insert, after update, after delete) {
-    new fieldServiceTransactionLog('WorkOrderLineItemLog').run();
+    new txnLog('WorkOrderLineItemLog').run();
 }

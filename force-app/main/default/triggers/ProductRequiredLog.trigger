@@ -1,3 +1,3 @@
 trigger ProductRequiredLog on ProductRequired (before insert, before update, before delete, after insert, after update, after delete) {
-    new fieldServiceTransactionLog('ProductRequiredLog').run();
+    new txnLog('ProductRequiredLog').run();
 }
