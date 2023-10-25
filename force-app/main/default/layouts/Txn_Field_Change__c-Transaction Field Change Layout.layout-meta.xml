@@ -15,7 +15,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Field_Service_Transaction_Log__c</field>
+                <field>Txn_Log__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

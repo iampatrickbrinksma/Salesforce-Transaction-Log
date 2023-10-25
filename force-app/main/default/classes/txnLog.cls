@@ -6,21 +6,21 @@
 * @author         Patrick Brinksma   <patrick@brinksma.es>
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-public with sharing class fieldServiceTransactionLog {
+public with sharing class txnLog {
 
     // Name of the trigger to validate if logging is enabled
     // for the specific trigger, which is managed in a custom setting
     private String triggerName;
 
     // Constructor
-    public fieldServiceTransactionLog(String triggerName) {
+    public txnLog(String triggerName) {
         this.triggerName = triggerName;
     }
 
     // Log transaction details
     public void run(){
         // Only run if feature is enabled, also for this trigger
-        if (fieldServiceTransactionLogUtil.loggingEnabled(this.triggerName)){
+        if (txnLogUtil.loggingEnabled(this.triggerName)){
 
             // Values from before the trigger, only applies to updates
             Map<Id, SObject> idToOldObj;
@@ -35,7 +35,7 @@ public with sharing class fieldServiceTransactionLog {
             }
 
             // Log transaction details
-            fieldServiceTransactionLogUtil.logTriggerTransaction(newObjects, idToOldObj);
+            txnLogUtil.logTriggerTransaction(newObjects, idToOldObj);
         }
 
     }

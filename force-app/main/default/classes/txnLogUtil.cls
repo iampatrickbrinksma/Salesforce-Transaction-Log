@@ -1,4 +1,4 @@
-public with sharing class fieldServiceTransactionLogUtil {
+public with sharing class txnLogUtil {
 
     // Values used to log transaction details
     private static final String TRIGGER_EVENT = 'Trigger';
@@ -18,10 +18,10 @@ public with sharing class fieldServiceTransactionLogUtil {
     private static Map<String, List<String>> objFieldNames = new Map<String, List<String>>();
 
     // Custom setting for configuration
-    private static Field_Service_Transaction_Log_Settings__c logSettings {
+    private static Txn_Log_Settings__c logSettings {
         get {
             if (logSettings == null){
-                logSettings = Field_Service_Transaction_Log_Settings__c.getInstance();
+                logSettings = Txn_Log_Settings__c.getInstance();
             }
             return logSettings;
         }
@@ -78,11 +78,11 @@ public with sharing class fieldServiceTransactionLogUtil {
         // Determine record action
         String recordAction = getRecordAction();
         // Create header records
-        Map<Id, Field_Service_Transaction_Log__c> transactionLogs = new Map<Id, Field_Service_Transaction_Log__c>();
+        Map<Id, Txn_Log__c> transactionLogs = new Map<Id, Txn_Log__c>();
         for (SObject obj : newObjects){
             transactionLogs.put(
                 (Id)obj.get('Id'),
-                new Field_Service_Transaction_Log__c (
+                new Txn_Log__c (
                     Object__c = objectApiName,
                     Record_Id__c = (Id)obj.get('Id'),
                     Event__c = 'Trigger',
@@ -95,7 +95,7 @@ public with sharing class fieldServiceTransactionLogUtil {
         insert transactionLogs.values();
         
         // Create a record for each field change
-        List<Field_Service_Transaction_Field_Change__c> fieldChanges = new List<Field_Service_Transaction_Field_Change__c>();
+        List<Txn_Field_Change__c> fieldChanges = new List<Txn_Field_Change__c>();
         for (SObject obj : newObjects){
             // Only log field changes if the trigger context is an insert of update
             if (Trigger.isInsert || Trigger.isUpdate){
@@ -109,8 +109,8 @@ public with sharing class fieldServiceTransactionLogUtil {
                         if (Trigger.isUpdate || (
                             Trigger.isInsert && newValue != null)){
                             fieldChanges.add(
-                                new Field_Service_Transaction_Field_Change__c(
-                                    Field_Service_Transaction_Log__c = transactionLogs.get((Id)obj.get('Id')).Id,
+                                new Txn_Field_Change__c(
+                                    Txn_Log__c = transactionLogs.get((Id)obj.get('Id')).Id,
                                     Field_API_Name__c = thisField,
                                     New_Value__c = newValue,
                                     Old_Value__c = Trigger.isUpdate ? oldValue : null

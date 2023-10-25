@@ -36,11 +36,11 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
-                    <value>Field_Service_Transaction_Log__c.Id</value>
+                    <value>Txn_Log__c.Id</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>Field_Service_Transaction_Field_Changes__r</value>
+                    <value>Txn_Field_Changes__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
@@ -73,9 +73,9 @@
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Field Service Transaction Log Record Page</masterLabel>
+    <masterLabel>Transaction Log Record Page</masterLabel>
     <parentFlexiPage>flexipage__default_rec_L</parentFlexiPage>
-    <sobjectType>Field_Service_Transaction_Log__c</sobjectType>
+    <sobjectType>Txn_Log__c</sobjectType>
     <template>
         <name>flexipage:recordHomeTemplateDesktop</name>
     </template>

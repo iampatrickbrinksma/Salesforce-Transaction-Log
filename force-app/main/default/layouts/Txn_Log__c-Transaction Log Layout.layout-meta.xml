@@ -134,7 +134,7 @@
         <fields>Field_API_Name__c</fields>
         <fields>Old_Value__c</fields>
         <fields>New_Value__c</fields>
-        <relatedList>Field_Service_Transaction_Field_Change__c.Field_Service_Transaction_Log__c</relatedList>
+        <relatedList>Txn_Field_Change__c.Txn_Log__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

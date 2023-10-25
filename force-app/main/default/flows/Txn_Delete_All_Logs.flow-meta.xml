@@ -10,7 +10,7 @@
             <assignToReference>VAR_RecordCount</assignToReference>
             <operator>AssignCount</operator>
             <value>
-                <elementReference>GET_All_Field_Service_Transactions_Records</elementReference>
+                <elementReference>GET_All_Transactions_Records</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -81,8 +81,8 @@
         </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Field Service Transactions Delete All Logs {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Field Service Transactions Delete All Logs</label>
+    <interviewLabel>Transactions Delete All Logs {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Transactions Delete All Logs</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -113,11 +113,11 @@
         <faultConnector>
             <targetReference>SCREEN_Error</targetReference>
         </faultConnector>
-        <inputReference>GET_All_Field_Service_Transactions_Records</inputReference>
+        <inputReference>GET_All_Transactions_Records</inputReference>
     </recordDeletes>
     <recordLookups>
-        <name>GET_All_Field_Service_Transactions_Records</name>
-        <label>All Field Service Transactions Records</label>
+        <name>GET_All_Transactions_Records</name>
+        <label>All Transactions Records</label>
         <locationX>578</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -125,7 +125,7 @@
             <targetReference>ASSIGN_Count_Records</targetReference>
         </connector>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Field_Service_Transaction_Log__c</object>
+        <object>Txn_Log__c</object>
         <queriedFields>Id</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -205,7 +205,7 @@
         <locationX>452</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>GET_All_Field_Service_Transactions_Records</targetReference>
+            <targetReference>GET_All_Transactions_Records</targetReference>
         </connector>
     </start>
     <status>Active</status>

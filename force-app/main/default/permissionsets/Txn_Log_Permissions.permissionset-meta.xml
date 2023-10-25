@@ -2,73 +2,73 @@
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Field_Change__c.Field_API_Name__c</field>
+        <field>Txn_Field_Change__c.Field_API_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Field_Change__c.New_Value__c</field>
+        <field>Txn_Field_Change__c.New_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Field_Change__c.Old_Value__c</field>
+        <field>Txn_Field_Change__c.Old_Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Event__c</field>
+        <field>Txn_Log__c.Event__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Field_Service_Transaction_Log__c.Link_To_Record__c</field>
+        <field>Txn_Log__c.Link_To_Record__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Log__c</field>
+        <field>Txn_Log__c.Log__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Object__c</field>
+        <field>Txn_Log__c.Object__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Record_Action__c</field>
+        <field>Txn_Log__c.Record_Action__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Record_Id__c</field>
+        <field>Txn_Log__c.Record_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Field_Service_Transaction_Log__c.Time__c</field>
+        <field>Txn_Log__c.Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Transaction_Context__c</field>
+        <field>Txn_Log__c.Transaction_Context__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Field_Service_Transaction_Log__c.Transaction_Id__c</field>
+        <field>Txn_Log__c.Transaction_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Field Service Transaction Log Permissions</label>
+    <label>Transaction Log Permissions</label>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Field_Service_Transaction_Field_Change__c</object>
+        <object>Txn_Field_Change__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -77,11 +77,11 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Field_Service_Transaction_Log__c</object>
+        <object>Txn_Log__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
-        <tab>Field_Service_Transaction_Log__c</tab>
+        <tab>Txn_Log__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>

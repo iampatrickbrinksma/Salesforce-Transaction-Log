@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Field_Service_Transaction_Log__c</fullName>
+    <fullName>Txn_Log__c</fullName>
     <externalId>false</externalId>
-    <label>Field Service Transaction Log</label>
-    <referenceTo>Field_Service_Transaction_Log__c</referenceTo>
-    <relationshipLabel>Field Service Transaction Field Changes</relationshipLabel>
-    <relationshipName>Field_Service_Transaction_Field_Changes</relationshipName>
+    <label>Transaction Log</label>
+    <referenceTo>Txn_Log__c</referenceTo>
+    <relationshipLabel>Transaction Field Changes</relationshipLabel>
+    <relationshipName>Txn_Field_Changes</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackTrending>false</trackTrending>

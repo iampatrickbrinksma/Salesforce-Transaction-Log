@@ -128,14 +128,11 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Field_Service_Transaction_Log_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
+        <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -143,7 +140,7 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
@@ -152,25 +149,18 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Field Service Transaction Log</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Transaction Field Change</label>
     <nameField>
-        <displayFormat>FSTL-{000000}</displayFormat>
-        <label>Log Name</label>
+        <displayFormat>FC-{000000}</displayFormat>
+        <label>Field Change Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Field Service Transaction Logs</pluralLabel>
-    <searchLayouts>
-        <listViewButtons>Delete_All_Logs</listViewButtons>
-        <searchResultsAdditionalFields>Object__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Event__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Record_Action__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Record_Id__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Transaction_Context__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <pluralLabel>Transaction Field Changes</pluralLabel>
+    <searchLayouts></searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

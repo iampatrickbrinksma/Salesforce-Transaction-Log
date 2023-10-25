@@ -2,6 +2,6 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <customSettingsType>Hierarchy</customSettingsType>
     <enableFeeds>false</enableFeeds>
-    <label>Field Service Transaction Log Settings</label>
+    <label>Transaction Log Settings</label>
     <visibility>Public</visibility>
 </CustomObject>
