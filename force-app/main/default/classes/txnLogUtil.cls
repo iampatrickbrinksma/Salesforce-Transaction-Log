@@ -37,11 +37,12 @@ public with sharing class txnLogUtil {
                 String triggerNames = logSettings.Enabled_Triggers_1__c == null ? '' : logSettings.Enabled_Triggers_1__c;
                 triggerNames += logSettings.Enabled_Triggers_2__c == null ? '' : ',' + logSettings.Enabled_Triggers_2__c;
                 triggerNames += logSettings.Enabled_Triggers_3__c == null ? '' : ',' + logSettings.Enabled_Triggers_3__c;
+                triggerNames += logSettings.Enabled_Triggers_4__c == null ? '' : ',' + logSettings.Enabled_Triggers_4__c;
+                triggerNames += logSettings.Enabled_Triggers_5__c == null ? '' : ',' + logSettings.Enabled_Triggers_5__c;
                 
                 for (String triggerName : triggerNames.split(',')){
-                    enabledTriggers.add(triggerName.trim());
+                    enabledTriggers.add(triggerName.trim().toLowerCase());
                 }
-                System.debug(enabledTriggers);
             }
             return enabledTriggers;
         }
@@ -62,7 +63,7 @@ public with sharing class txnLogUtil {
 
     // Validate if transaction details should be logged
     public static Boolean loggingEnabled(String triggerName){
-        if (logSettings.Log_Transactions__c && enabledTriggers.contains(triggerName)){
+        if (logSettings.Log_Transactions__c && enabledTriggers.contains(triggerName.toLowerCase())){
             return true;
         } else {
             return false;
