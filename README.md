@@ -7,10 +7,11 @@ IMPORTANT: This code is not intended to be deployed to a Salesforce production e
 
 ## Prerequisites
 * Salesforce Org
+* Salesforce Field Service - optional (if you want to use the Apex Triggers which are part of this repository)
 
 ## Deployment
 
-Deploy the metadata in this repository to your Salesforce org
+Deploy the metadata in this repository to your Salesforce org. It's not required to deploy the Apex Triggers that are part of this repository, they are included to cover the typical Field Service objects.
 
 ## How To Use
 Assign the permission set "Field Service Transaction Log Permissions" to the user(s) that will need access to view the transaction logs.
@@ -18,16 +19,21 @@ Assign the permission set "Field Service Transaction Log Permissions" to the use
 For the objects you want to log the transactions for, create an Apex Trigger as shown below:
 ```
 trigger <Trigger Name> on <SObject API Name> (before insert, before update, before delete, after insert, after update, after delete) {
-  new fieldServiceTransactionLog().run();
+  new fieldServiceTransactionLog('<Trigger Name>').run();
 }
 ```
 So for example for the ServiceAppointment SObject it would look like:
 ```
 trigger ServiceAppointmentLog on ServiceAppointment (before insert, before update, before delete, after insert, after update, after delete) {
-    new fieldServiceTransactionLog().run();
+    new fieldServiceTransactionLog('ServiceAppointmentLog').run();
 }
 ```
-To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings"
+If you have a Trigger Framework implemented, you can add the following line at the end of the single Apex Trigger you have on the object:
+```
+  new fieldServiceTransactionLog(<Trigger Name>).run();
+```
+
+To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings", and make sure the ```<Trigger Name>``` is included on of the Enable Trigger fields in the custom setting. Multiple triggers can be added as comma separated value.
 
 To view the transactions logs, open the Tab "Field Service Transaction Logs". Each record is an Apex Trigger event with the event details captured, and the individual field values which are set are stored in the "Field Service Transaction Field Changes" related list. See screenshots below:
 
