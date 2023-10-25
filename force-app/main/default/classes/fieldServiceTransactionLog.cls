@@ -1,15 +1,43 @@
+/**
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
+* Class for logging transaction details which is called from any Apex Trigger from which you want
+* to log the transaction details from
+* ─────────────────────────────────────────────────────────────────────────────────────────────────
+* @author         Patrick Brinksma   <patrick@brinksma.es>
+* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
 public with sharing class fieldServiceTransactionLog {
 
-    public fieldServiceTransactionLog() {}
+    // Name of the trigger to validate if logging is enabled
+    // for the specific trigger, which is managed in a custom setting
+    private String triggerName;
 
+    // Constructor
+    public fieldServiceTransactionLog(String triggerName) {
+        this.triggerName = triggerName;
+    }
+
+    // Log transaction details
     public void run(){
-        if (!fieldServiceTransactionLogUtil.loggingEnabled) return;
+        // Only run if feature is enabled, also for this trigger
+        if (fieldServiceTransactionLogUtil.loggingEnabled(this.triggerName)){
 
-        List<SObject> newObjects = Trigger.new;
-        Map<Id, SObject> idToOldObj;
-        if (Trigger.isUpdate) idToOldObj = (Map<Id, SObject>)Trigger.oldMap;
-        if (Trigger.isDelete) newObjects = Trigger.old;
-        fieldServiceTransactionLogUtil.logTriggerTransaction(newObjects, idToOldObj);
+            // Values from before the trigger, only applies to updates
+            Map<Id, SObject> idToOldObj;
+            if (Trigger.isUpdate) idToOldObj = (Map<Id, SObject>)Trigger.oldMap;
+
+            // Updated or inserted values
+            List<SObject> newObjects;
+            if (Trigger.isDelete) {
+                newObjects = Trigger.old;
+            } else {
+                newObjects = Trigger.new;
+            }
+
+            // Log transaction details
+            fieldServiceTransactionLogUtil.logTriggerTransaction(newObjects, idToOldObj);
+        }
+
     }
 
 }
