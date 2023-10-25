@@ -35,7 +35,7 @@ If you have a Trigger Framework implemented, you can add the following line at t
 
 To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings", and make sure the ```<Trigger Name>``` is included on of the Enable Trigger fields in the custom setting. Multiple triggers can be added as comma separated value as shown in the screenshot below:
 
-![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/e95834a0-8b5e-4e01-a4f2-723b4cf0a375)
+![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/762855ac-65fe-4e20-b98b-991c0903d578)
 
 As the Custom Setting is Hierarchical, you can use different configurations per profile / user.
 
