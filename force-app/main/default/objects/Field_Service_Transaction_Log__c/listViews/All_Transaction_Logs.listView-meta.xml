@@ -2,11 +2,14 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All_Transaction_Logs</fullName>
     <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
     <columns>CREATED_DATE</columns>
+    <columns>Time__c</columns>
     <columns>Event__c</columns>
     <columns>Object__c</columns>
     <columns>Record_Action__c</columns>
     <columns>Record_Id__c</columns>
+    <columns>Link_To_Record__c</columns>
     <columns>Transaction_Context__c</columns>
     <columns>Transaction_Id__c</columns>
     <filterScope>Everything</filterScope>

@@ -23,6 +23,10 @@
                 <behavior>Edit</behavior>
                 <field>Transaction_Context__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Link_To_Record__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -21,6 +21,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Field_Service_Transaction_Log__c.Link_To_Record__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Field_Service_Transaction_Log__c.Log__c</field>
         <readable>true</readable>
@@ -38,6 +43,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Field_Service_Transaction_Log__c.Record_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Field_Service_Transaction_Log__c.Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
