@@ -41,8 +41,9 @@ As the Custom Setting is Hierarchical, you can use different configurations per 
 
 To view the transactions logs, open the Tab "Field Service Transaction Logs". Each record is an Apex Trigger event with the event details captured, and the individual field values which are set are stored in the "Field Service Transaction Field Changes" related list. See screenshots below:
 
-![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/a9a431cb-c1c3-4364-b6d4-6e1f78adeb02)
+![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/b3705379-0d36-4499-a1ff-c1af919dbdda)
 
-![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/3aa12f83-1d8c-4179-bb40-876f6757c32a)
+![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/7ec39f89-9555-4f39-be76-9da5cceeb9e4)
+
 
 
