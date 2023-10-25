@@ -33,7 +33,11 @@ If you have a Trigger Framework implemented, you can add the following line at t
   new fieldServiceTransactionLog(<Trigger Name>).run();
 ```
 
-To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings", and make sure the ```<Trigger Name>``` is included on of the Enable Trigger fields in the custom setting. Multiple triggers can be added as comma separated value.
+To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings", and make sure the ```<Trigger Name>``` is included on of the Enable Trigger fields in the custom setting. Multiple triggers can be added as comma separated value as shown in the screenshot below:
+
+![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/e95834a0-8b5e-4e01-a4f2-723b4cf0a375)
+
+As the Custom Setting is Hierarchical, you can use different configurations per profile / user.
 
 To view the transactions logs, open the Tab "Field Service Transaction Logs". Each record is an Apex Trigger event with the event details captured, and the individual field values which are set are stored in the "Field Service Transaction Field Changes" related list. See screenshots below:
 
