@@ -13,6 +13,7 @@ public with sharing class txnLogUtil {
     private static final String SCHEDULED_CONTEXT = 'Scheduled';
     private static final String QUEUEABLE_CONTEXT = 'Queueable';
     private static final String BATCH_CONTEXT = 'Batch';
+    private static final String NEW_RECORD = 'New Record';
 
     // Map of Object API Name to Field Names to traverse through all fields of the object
     private static Map<String, List<String>> objFieldNames = new Map<String, List<String>>();
@@ -80,12 +81,17 @@ public with sharing class txnLogUtil {
         String recordAction = getRecordAction();
         // Create header records
         Map<Id, Txn_Log__c> transactionLogs = new Map<Id, Txn_Log__c>();
+        // Record counter (for inserts)
+        Integer recordNr = 1;
         for (SObject obj : newObjects){
+            String recordId = (Id)obj.get('Id');
+            if (recordId == null) recordId = NEW_RECORD + ' ' + recordNr;
+            recordNr++;
             transactionLogs.put(
                 (Id)obj.get('Id'),
                 new Txn_Log__c (
                     Object__c = objectApiName,
-                    Record_Id__c = (Id)obj.get('Id'),
+                    Record_Id__c = recordId,
                     Event__c = 'Trigger',
                     Transaction_Context__c = getTransactionContext(),
                     Record_Action__c = recordAction,
@@ -97,7 +103,12 @@ public with sharing class txnLogUtil {
         
         // Create a record for each field change
         List<Txn_Field_Change__c> fieldChanges = new List<Txn_Field_Change__c>();
+        // Record counter (for inserts)
+        recordNr = 1;
         for (SObject obj : newObjects){
+            String recordId = (Id)obj.get('Id');
+            if (recordId == null) recordId = NEW_RECORD + ' ' + recordNr;
+            recordNr++;
             // Only log field changes if the trigger context is an insert of update
             if (Trigger.isInsert || Trigger.isUpdate){
                 for (String thisField : fieldNames){
@@ -111,7 +122,7 @@ public with sharing class txnLogUtil {
                             Trigger.isInsert && newValue != null)){
                             fieldChanges.add(
                                 new Txn_Field_Change__c(
-                                    Txn_Log__c = transactionLogs.get((Id)obj.get('Id')).Id,
+                                    Txn_Log__c = transactionLogs.get(recordId).Id,
                                     Field_API_Name__c = thisField,
                                     New_Value__c = newValue,
                                     Old_Value__c = Trigger.isUpdate ? oldValue : null
