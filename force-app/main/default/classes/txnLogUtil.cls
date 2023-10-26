@@ -80,7 +80,7 @@ public with sharing class txnLogUtil {
         // Determine record action
         String recordAction = getRecordAction();
         // Create header records
-        Map<Id, Txn_Log__c> transactionLogs = new Map<Id, Txn_Log__c>();
+        Map<String, Txn_Log__c> transactionLogs = new Map<String, Txn_Log__c>();
         // Record counter (for inserts)
         Integer recordNr = 1;
         for (SObject obj : newObjects){
@@ -88,7 +88,7 @@ public with sharing class txnLogUtil {
             if (recordId == null) recordId = NEW_RECORD + ' ' + recordNr;
             recordNr++;
             transactionLogs.put(
-                (Id)obj.get('Id'),
+                recordId,
                 new Txn_Log__c (
                     Object__c = objectApiName,
                     Record_Id__c = recordId,
