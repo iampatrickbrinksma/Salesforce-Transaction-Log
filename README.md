@@ -14,23 +14,27 @@ IMPORTANT: This code is not intended to be deployed to a Salesforce production e
 Deploy the metadata in this repository to your Salesforce org. It's not required to deploy the Apex Triggers that are part of this repository, they are included to cover the typical Field Service objects.
 
 ## How To Use
-Assign the permission set "Field Service Transaction Log Permissions" to the user(s) that will need access to view the transaction logs.
+- Assign the permission set "Field Service Transaction Log Permissions" to the user(s) that will need access to view the transaction logs.
+- For the objects you want to log the transactions for, create an Apex Trigger as shown below:
 
-For the objects you want to log the transactions for, create an Apex Trigger as shown below:
 ```
 trigger <Trigger Name> on <SObject API Name> (before insert, before update, before delete, after insert, after update, after delete) {
   new fieldServiceTransactionLog('<Trigger Name>').run();
 }
 ```
+
 So for example for the ServiceAppointment SObject it would look like:
+
 ```
 trigger ServiceAppointmentLog on ServiceAppointment (before insert, before update, before delete, after insert, after update, after delete) {
     new fieldServiceTransactionLog('ServiceAppointmentLog').run();
 }
 ```
+
 If you have a Trigger Framework implemented, you can add the following line at the end of the single Apex Trigger you have on the object:
+
 ```
-  new fieldServiceTransactionLog(<Trigger Name>).run();
+new fieldServiceTransactionLog(<Trigger Name>).run();
 ```
 
 To enable logging, make sure the "Log Transactions" checkbox field is checked in the Custom Setting "Field Service Transaction Log Settings", and make sure the ```<Trigger Name>``` is included on of the Enable Trigger fields in the custom setting. Multiple triggers can be added as comma separated value as shown in the screenshot below:
@@ -43,7 +47,7 @@ To view the transactions logs, open the Tab "Field Service Transaction Logs". Ea
 
 ![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/b3705379-0d36-4499-a1ff-c1af919dbdda)
 
+- Note: When records are inserted, during the ```before insert``` event the record Id is not known yet. In those cases the Record Id field in the Transaction Log object is populated with ```New Record x```, where x is an incremental number.
+
 ![image](https://github.com/iampatrickbrinksma/SFS-Transaction-Log/assets/78381570/7ec39f89-9555-4f39-be76-9da5cceeb9e4)
-
-
 
