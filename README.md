@@ -3,7 +3,17 @@
 Ever wondered what the exact order of changes are and what values are set for all the fields during a transaction, especially when it involves multiple objects, and there is a mix of synchronous and asynchronous transactions? The Salesforce Transaction Log provides insight into the transaction timeline and what field values are being set. I initially developed this to help me understand the Salesforce Field Service transactions, but it can be used for any object and any Salesforce application.
 
 ## Disclaimer
-IMPORTANT: This code is not intended to be deployed to a Salesforce production environment, but to be used for debugging purposes to understand transactions or debug issues. This is not a Salesforce product and is not officially supported by Salesforce.
+This repository contains code intended to help Salesforce Field Service customers and partners accelerate their implementations. Please note the following:
+* This code is not an official Salesforce product.
+* It is not officially supported by Salesforce.
+* The code serves as an example of how to implement specific functionality or make use of certain features.
+
+Before using this code in a production environment, it is crucial that you:
+* Adopt the code to fit your specific needs.
+* Test thoroughly to ensure it works as expected in your environment.
+* Consider the code to be your own and take full responsibility for its use.
+
+By using this code, you acknowledge that Salesforce is not liable for any issues that may arise from its use.
 
 ## Prerequisites
 * Salesforce Org
